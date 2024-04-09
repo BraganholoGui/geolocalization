@@ -1,8 +1,13 @@
-import { Children } from "react";
+import { Outlet } from 'react-router-dom';
+import Header from '../Header';
+import Footer from '../Footer';
 
-export default function Layout(props: any){
-    console.log(props)
-    return (
-       <> {props.Cildren}</>
-    )
+export default function Layout() {
+  return (
+    <>
+        <Header/>
+        <Outlet />
+        <Footer/>
+    </>
+  )
 }
