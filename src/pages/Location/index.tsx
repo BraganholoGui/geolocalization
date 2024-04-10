@@ -31,7 +31,7 @@ function LocationComponent() {
 
     };
 
-    const buscarCEP = async (latitude:number | null, longitude:number | null) => {
+    const buscarCEP = async (latitude: number | null, longitude: number | null) => {
         try {
             let query = '';
             let latitudeQuery = latitude ? `latitude=${latitude}` : null;
@@ -41,16 +41,16 @@ function LocationComponent() {
             console.log(query)
 
             await get(`/geoloc${query}`)
-            .then(async response => {
-              if (response) {
-                console.log(response)
-              }
-            });
+                .then(async response => {
+                    if (response) {
+                        console.log(response)
+                    }
+                });
         } catch (error) {
-          console.error('Erro ao buscar CEP:', error);
-          return 'Erro ao buscar CEP';
+            console.error('Erro ao buscar CEP:', error);
+            return 'Erro ao buscar CEP';
         }
-      };
+    };
 
     useEffect(() => {
         console.log(locationData)
@@ -63,7 +63,7 @@ function LocationComponent() {
             <button onClick={getLocation}>Obter Localização</button>
             {latitude && longitude && (
                 <p>
-                    Latitude: {latitude}, Longitude: {longitude}<br/>
+                    Latitude: {latitude}, Longitude: {longitude}<br />
                     Data: {timestamp}
                 </p>
             )}

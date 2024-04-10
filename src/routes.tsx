@@ -2,7 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Layout from './components/Layout';
-import LocationComponent from './components/Location';
+import LocationComponent from './pages/Location';
 
 export default function Router() {
   return (
