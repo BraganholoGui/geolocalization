@@ -2,6 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Layout from './components/Layout';
+import LocationComponent from './components/Location';
 
 export default function Router() {
   return (
@@ -10,6 +11,7 @@ export default function Router() {
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
           <Route path='/home' element={<Home />} />
+          <Route path='/location' element={<LocationComponent />} />
         </Route>
       </Routes>
     </BrowserRouter>

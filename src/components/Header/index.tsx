@@ -1,8 +1,9 @@
+import {HeaderContainer} from './style' 
 
 export default function Header() {
   return (
-    <div >
-        header
-    </div>
+    <HeaderContainer >
+        <b><i>Trace Visits</i></b>
+    </HeaderContainer>
   )
 }
