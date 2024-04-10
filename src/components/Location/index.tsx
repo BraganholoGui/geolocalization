@@ -1,14 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import moment from 'moment';
-import Map from '../Map';
-import axios from 'axios';
-const geolib = require('geolib');
-
-declare global {
-    interface Window {
-        google: any;
-    }
-}
+import { get } from '../../services/actions';
 
 function LocationComponent() {
     const [locationData, setLocationData] = useState<GeolocationCoordinates | null>(null);
@@ -19,9 +11,9 @@ function LocationComponent() {
 
     const getLocation = () => {
         if (navigator.geolocation) {
-            console.log(navigator.geolocation)
             navigator.geolocation.getCurrentPosition(
                 position => {
+                    buscarCEP(position.coords.latitude, position.coords.longitude)
                     setLatitude(position.coords.latitude);
                     setLongitude(position.coords.longitude);
                     setLocationData(position.coords);
@@ -37,27 +29,23 @@ function LocationComponent() {
             setError("Geolocation is not supported by this browser.");
         }
 
-        buscarCEP()
-
-
     };
 
-    const buscarCEP = async () => {
+    const buscarCEP = async (latitude:number | null, longitude:number | null) => {
         try {
-          const response = await axios.get('https://nominatim.openstreetmap.org/reverse', {
-            params: {
-              lat: -20.5193216,
-              lon: -47.4120192,
-              format: 'json'
-            }
-          });
-          if (response.data && response.data.address) {
-            const endereco = response.data.address;
-            const cep = endereco.postcode || 'CEP não encontrado';
-            return cep;
-          } else {
-            return 'CEP não encontrado';
-          }
+            let query = '';
+            let latitudeQuery = latitude ? `latitude=${latitude}` : null;
+            let longitudeQuery = longitude ? `longitude=${longitude}` : null;
+            query = query.includes('?') ? query + '&' + latitudeQuery : query + '?' + latitudeQuery;
+            query = query.includes('?') ? query + '&' + longitudeQuery : query + '?' + longitudeQuery;
+            console.log(query)
+
+            await get(`/geoloc${query}`)
+            .then(async response => {
+              if (response) {
+                console.log(response)
+              }
+            });
         } catch (error) {
           console.error('Erro ao buscar CEP:', error);
           return 'Erro ao buscar CEP';
@@ -75,7 +63,8 @@ function LocationComponent() {
             <button onClick={getLocation}>Obter Localização</button>
             {latitude && longitude && (
                 <p>
-                    Latitude: {latitude}, Longitude: {longitude}
+                    Latitude: {latitude}, Longitude: {longitude}<br/>
+                    Data: {timestamp}
                 </p>
             )}
             {error && <p>{error}</p>}
