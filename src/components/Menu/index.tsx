@@ -47,6 +47,10 @@ const Menu = () => {
                   <BarChart />
                   <a href='/' >Dashboard</a>
                 </li>
+                <li>
+                  <BarChart />
+                  <a href='/location' >Location</a>
+                </li>
               </S.List>
               }
 

@@ -32,19 +32,9 @@ function Header() {
     <>
       <S.ContainerMain>
         <S.Title>
-          {fullLogo ?
-            <S.FullNameLogo onClick={() => { setMinorLogo(true); setFullLogo(false) }}>
+        <S.FullNameLogo onClick={() => { setMinorLogo(true); setFullLogo(false) }}>
               Trace Visits
             </S.FullNameLogo>
-            : null}
-          {minorLogo ?
-            <S.Cube onClick={() => { setFullLogo(true); setMinorLogo(false) }}>
-              <div>
-                {/* <span style={{ "--i": 0 }}>SGPO</span> */}
-              </div>
-            </S.Cube>
-            : null
-          }
         </S.Title>
         <S.Profile>
           <S.VerticalHr></S.VerticalHr>

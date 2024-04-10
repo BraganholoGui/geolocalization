@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 const COLORS ={
-  primaryDark: '#115b4c',
+  primaryDark: '#15739e',
   primaryLight: '#b6edc8',
 };
 
@@ -31,7 +31,7 @@ export const Nav = styled.div<Props>`
   z-index: 99998;
   border-radius:${(props:any) => (!props.clicked? " 0% 0% 0% 0%":"0% 0% 50% 0%")};
   background-image: radial-gradient(${COLORS.primaryLight},${COLORS.primaryDark});
-  /* background:${(props:any) => (!props.clicked? " #115b4c":"#b6edc8")}; */
+  /* background:${(props:any) => (!props.clicked? " #15739e":"#b6edc8")}; */
   /* border-radius: 0% 0% 100% 0%; */
   width: ${(props:any) => (props.clicked? "5rem":"14rem")};
   height: ${(props:any) => (props.clicked? "5rem":"100%")};
