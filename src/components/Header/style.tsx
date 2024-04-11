@@ -20,15 +20,18 @@ export const Title = styled.div`
   margin-left: 280px;
   font-size: 3vh;
   @media (max-width: 768px) {
-     width: 80%;
+     width: 90%;
      font-size: 2.5vh;
      margin-left: 0px;
      margin-right: 10px;
-   
   }
+  @media (max-width: 430px) {
+    width: 35%;
+  }
+
 `;
 export const Profile = styled.div`
- width: 25%;
+ width: 10%;
  display:flex;
   justify-content: flex-end;
   align-items: center;
@@ -36,52 +39,50 @@ export const Profile = styled.div`
   color: #fff;
 
   .icon-profile{
-cursor: pointer;
+    cursor: pointer;
 
   }
-  @media (max-width: 768px) {
-     width: 30%;
+  @media (max-width: 1400px) {
+     width: 20%;
      font-size: 2.5vh;
      padding-right: 0px;
   }
-`;
-export const ProfileInfo = styled.div`
-display:flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-color: #fff;
+  @media (max-width: 768px) {
+     width: 25%;
+     font-size: 2.5vh;
+     padding-right: 0px;
+  }
 
-`; 
+  @media (max-width: 430px) {
+    width: 35%;
+  }
+
+`;
+
 export const UserInfo = styled.div`
-width: 100%;
-min-width: 150px;
 display:flex;
 color: #fff;
 font-size: 18px;
 justify-content: center;
 align-items:center ;
 `; 
-export const RoleInfo = styled.div`
-width: 100%;
+export const UserImg = styled.div`
 display:flex;
+color: #fff;
 justify-content: center;
 align-items:center ;
-color: #fff;
-font-size: 14px;
 `; 
 
 export const VerticalHr = styled.hr`
-  width: 4px;
+  width: 3px;
   height: 70px !important; 
   background-color: white; 
 `; 
 export const Logout = styled.div`
-  background-color: black; 
+  background-color: #033958; 
   border-radius: 7px;
   padding: 5px;
   cursor: pointer;
-  margin-right: 10px;
   max-height: 30px;
   display: flex;
   align-items: center;
@@ -89,8 +90,8 @@ export const Logout = styled.div`
 `; 
 export const ContainerLogout = styled.div`
   display:flex;
-   /* flex-direction:column;  */
-   margin-left:15px; 
+   flex-direction:column; 
+   margin-right:20px; 
    cursor:pointer;
    justify-content: center;
    align-items: center;
