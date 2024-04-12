@@ -11,7 +11,7 @@ export const ContainerMain = styled.div`
 `;
 
 export const Title = styled.div`
- width: 65%;
+ width: 85%;
  display:flex;
   justify-content: center;
   align-items: center;

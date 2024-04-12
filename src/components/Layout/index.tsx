@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './styles';
 import Header from '../Header';
-// import Navbar from '../navbar';
 import { Outlet, useLocation } from 'react-router-dom';
 import Menu from '../Menu';
 
@@ -24,11 +23,9 @@ function Layout({ children, ...rest }: any) {
   // useEffect(() => {
   //   loadData();
   // }, [location]);
+
   return (
     <S.Grid {...rest}>
-      {/* <S.GridNav>
-        <Navbar visible={showNav} close={toggle} setCompact={setCompact} />
-      </S.GridNav> */}
       <S.GridHeader>
         <Header />
         <Menu/>

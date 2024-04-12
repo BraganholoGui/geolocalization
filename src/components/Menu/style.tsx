@@ -35,7 +35,7 @@ export const Nav = styled.div<Props>`
   /* border-radius: 0% 0% 100% 0%; */
   width: ${(props:any) => (props.clicked? "5rem":"14rem")};
   height: ${(props:any) => (props.clicked? "5rem":"100%")};
-  transition: transform 3.2s;
+  transition: width 1s, height 1s;
 `;
 export const Icon = styled.span<Props>`
 cursor: pointer;

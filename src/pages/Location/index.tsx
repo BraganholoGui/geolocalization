@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import moment from 'moment';
 import { get } from '../../services/actions';
+import Map from '../../components/Map';
 
 function LocationComponent() {
     const [locationData, setLocationData] = useState<GeolocationCoordinates | null>(null);

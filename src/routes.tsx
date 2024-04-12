@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Layout from './components/Layout';
 import LocationComponent from './pages/Location';
+import User from './pages/User';
 
 export default function Router() {
   return (
@@ -11,7 +12,8 @@ export default function Router() {
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
           <Route path='/home' element={<Home />} />
-          <Route path='/location' element={<LocationComponent />} />
+          <Route path='/trace' element={<LocationComponent />} />
+          <Route path='/user' element={<User />} />
         </Route>
       </Routes>
     </BrowserRouter>

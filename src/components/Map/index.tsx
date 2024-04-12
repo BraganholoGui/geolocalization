@@ -11,7 +11,6 @@ const searchClient = algoliasearch(
   'latency',
   '6be0576ff61c053d5f9a3225e2a90f76'
 );
-
 export default function Map() {
   return (
     <>
@@ -39,7 +38,7 @@ export default function Map() {
           />
           <MapContainer
             className="map"
-            center={[-20.5193216, -47.4120192]}
+            center={[48.85, 2.35]}
             zoom={10}
             minZoom={4}
             scrollWheelZoom={true}

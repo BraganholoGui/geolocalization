@@ -14,6 +14,10 @@ import {
   People
 } from '@mui/icons-material';
 // import { useHistory } from 'react-router-dom';
+export interface Lista {
+  url: string;
+  name: string;
+}
 
 const Menu = () => {
   const [click, setClick] = useState<any>(true);
@@ -31,6 +35,24 @@ const Menu = () => {
   // }, [permission]);
 
   const handleClick = () => setClick(!click);
+  const menuList= [
+    {
+      name:"Home",
+      url:"/home",
+      component: <BarChart />
+    },
+    {
+      name:"Traço",
+      url:"/trace",
+      component: <BarChart />
+    },
+    {
+      name:"Perfil",
+      url:"/perfil",
+      component: <BarChart />
+    },
+    
+  ]
 
   return (
     <>
@@ -43,14 +65,14 @@ const Menu = () => {
             <S.Navigation >
               {
                 <S.List>
-                <li>
-                  <BarChart />
-                  <a href='/' >Dashboard</a>
-                </li>
-                <li>
-                  <BarChart />
-                  <a href='/location' >Location</a>
-                </li>
+                  {
+                    menuList?.map(item =>(
+                      <li>
+                        <BarChart />
+                        <a href={item.url} >{item.name}</a>
+                      </li>
+                    ))
+                  }
               </S.List>
               }
 
